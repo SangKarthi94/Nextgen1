@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import SwiftyJSON
 
 struct CategoryModel: Decodable {
     let data : [CategoryData]!
@@ -21,6 +22,29 @@ struct CategoryData: Decodable {
     let categoryImage : String!
     let categoryName : String!
     let subCategoryCount : String!
+    
+}
+
+struct Contact : Decodable{
+    let firstName : String!
+    let lastName : String!
+    let gender : String!
+    let age : Int!
+    let address: Address?
+    let phoneNumbers : [PhoneNumbers]!
+}
+
+struct PhoneNumbers : Decodable{
+    let type : String!
+    let number : String!
+}
+
+
+struct Address : Decodable{
+    let streetAddress : String!
+    let city : String!
+    let state : String!
+    let postalCode : String!
 }
 
 let notifyKey1 = "com.nexgen.key1"
@@ -37,8 +61,10 @@ class ViewController: UIViewController {
         //
         createObservers()
         
-        jsonAlomaFire(path: Constants.Params.CATEGORY) //AlomaFire
+//        jsonAlomaFire(path: Constants.Params.CATEGORY) //AlomaFire
 //        jsonURLSession(path: Constants.Params.CATEGORY) //URL Session
+        
+        localJson()
        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -88,6 +114,29 @@ class ViewController: UIViewController {
         delegateViewCtrl.learnDelegate = self as LearnDelegate?
         self.navigationController?.pushViewController(delegateViewCtrl, animated: true) //With NavigationViewControll
 //        present(delegateViewCtrl, animated: true, completion: nil) //To just present the view
+        
+    }
+    
+    func localJson(){
+        
+        let location = "response"
+        let fileType = "json"
+        if let path = Bundle.main.path(forResource: location, ofType: fileType) {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                //Decode the data
+                let jsonDecoder = JSONDecoder()
+                 let jsonData = try jsonDecoder.decode(Contact.self, from: data)
+                print("test",data)
+                print(jsonData.firstName ?? "String")
+                print(jsonData.address?.city)
+                print(jsonData.phoneNumbers)
+
+                print("Sangavi Success", jsonData)
+            } catch let error {
+                print("Sangavi Failure")
+                print(error.localizedDescription)
+            }}
         
     }
     

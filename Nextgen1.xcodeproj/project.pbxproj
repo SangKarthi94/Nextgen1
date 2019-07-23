@@ -17,6 +17,7 @@
 		24C7E14822DF799D006B3B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7E14622DF799D006B3B4B /* LaunchScreen.storyboard */; };
 		24C7E15322DF7F55006B3B4B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7E15222DF7F55006B3B4B /* Constants.swift */; };
 		24F57FAB22E13FAC00FCF55C /* CategoryCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24F57FA922E13FAC00FCF55C /* CategoryCore.xcdatamodeld */; };
+		24FA659F22E76589008AA8AD /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 24FA659E22E76589008AA8AD /* response.json */; };
 		8DD14D32208EA5D31B0D16AE /* Pods_Nextgen1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9C716552C9F2AA0D89823D /* Pods_Nextgen1.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		24C7E14922DF799D006B3B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C7E15222DF7F55006B3B4B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24F57FAA22E13FAC00FCF55C /* CategoryCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CategoryCore.xcdatamodel; sourceTree = "<group>"; };
+		24FA659E22E76589008AA8AD /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
 		2F9C716552C9F2AA0D89823D /* Pods_Nextgen1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nextgen1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3E31ABCE06BF3D7613A100 /* Pods-Nextgen1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nextgen1.debug.xcconfig"; path = "Target Support Files/Pods-Nextgen1/Pods-Nextgen1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 		24C7E13C22DF799B006B3B4B /* Nextgen1 */ = {
 			isa = PBXGroup;
 			children = (
+				24FA659D22E7655F008AA8AD /* JsonFile */,
 				24C7E13F22DF799B006B3B4B /* ViewController.swift */,
 				240BB29322E34F2C00F42A66 /* Notifications */,
 				240BB29222E34F2300F42A66 /* Delegate */,
@@ -124,6 +127,14 @@
 				24F57FA922E13FAC00FCF55C /* CategoryCore.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		24FA659D22E7655F008AA8AD /* JsonFile */ = {
+			isa = PBXGroup;
+			children = (
+				24FA659E22E76589008AA8AD /* response.json */,
+			);
+			path = JsonFile;
 			sourceTree = "<group>";
 		};
 		980DF693FB3A3A1109179425 /* Pods */ = {
@@ -195,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FA659F22E76589008AA8AD /* response.json in Resources */,
 				24C7E14822DF799D006B3B4B /* LaunchScreen.storyboard in Resources */,
 				24C7E14522DF799D006B3B4B /* Assets.xcassets in Resources */,
 				24C7E14322DF799B006B3B4B /* Main.storyboard in Resources */,
